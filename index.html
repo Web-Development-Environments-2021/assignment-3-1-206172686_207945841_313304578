@@ -211,6 +211,7 @@
   <ul>
   <li><a href="#createMatch"><code><span class="http-method">post</span> /matches/add</code></a></li>
   <li><a href="#findMatchesByTeam"><code><span class="http-method">get</span> /matches/findByTeam/{teamId}</code></a></li>
+  <li><a href="#getAllMatches"><code><span class="http-method">get</span> /matches/all</code></a></li>
   <li><a href="#getMatchById"><code><span class="http-method">get</span> /matches/{matchId}</code></a></li>
   <li><a href="#matchIds"><code><span class="http-method">get</span> /matches/list/{matchIds}</code></a></li>
   </ul>
@@ -230,6 +231,7 @@
   </ul>
   <h4><a href="#Teams">Teams</a></h4>
   <ul>
+  <li><a href="#getAllTeams"><code><span class="http-method">get</span> /teams/all</code></a></li>
   <li><a href="#getTeamById"><code><span class="http-method">get</span> /teams/{teamId}</code></a></li>
   <li><a href="#queryTeams"><code><span class="http-method">get</span> /teams/query</code></a></li>
   </ul>
@@ -742,6 +744,79 @@
         <a href="#"></a>
     <h4 class="field-label">404</h4>
     team id not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllMatches"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /matches/all</code></pre></div>
+    <div class="method-summary">Get all matches (<span class="nickname">getAllMatches</span>)</div>
+    <div class="method-notes">return all matches</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Match">Match</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "start" : "2021-01-30T20:30:00Z",
+  "referee" : "Sapir Berman",
+  "awayTeamGoals" : 1,
+  "seasonId" : "12",
+  "leagueId" : "11",
+  "stadium" : {
+    "name" : "Sami Offer",
+    "id" : "11"
+  },
+  "homeTeam" : [ {
+    "id" : "10",
+    "name" : "Maccabi Haifa",
+    "stadiumId" : "11",
+    "teamLogo" : "https://en.wikipedia.org/wiki/Maccabi_Haifa_F.C.#/media/File:Maccabi_Haifa_FC_Logo_2020.png"
+  } ],
+  "id" : "10",
+  "homeTeamGoals" : 2,
+  "roundId" : "13",
+  "events" : [ {
+    "description" : "yellow card to Raz Meir",
+    "id" : "10",
+    "type" : "goal",
+    "minute" : 33
+  }, {
+    "description" : "yellow card to Raz Meir",
+    "id" : "10",
+    "type" : "goal",
+    "minute" : 33
+  } ],
+  "status" : "done"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/yaml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#Match">Match</a>
+    <h4 class="field-label">404</h4>
+    matches not found
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -1323,6 +1398,79 @@
   </div> <!-- method -->
   <hr/>
   <h1><a name="Teams">Teams</a></h1>
+  <div class="method"><a name="getAllTeams"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /teams/all</code></pre></div>
+    <div class="method-summary">Get all teams (<span class="nickname">getAllTeams</span>)</div>
+    <div class="method-notes">return all teams</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Match">Match</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "start" : "2021-01-30T20:30:00Z",
+  "referee" : "Sapir Berman",
+  "awayTeamGoals" : 1,
+  "seasonId" : "12",
+  "leagueId" : "11",
+  "stadium" : {
+    "name" : "Sami Offer",
+    "id" : "11"
+  },
+  "homeTeam" : [ {
+    "id" : "10",
+    "name" : "Maccabi Haifa",
+    "stadiumId" : "11",
+    "teamLogo" : "https://en.wikipedia.org/wiki/Maccabi_Haifa_F.C.#/media/File:Maccabi_Haifa_FC_Logo_2020.png"
+  } ],
+  "id" : "10",
+  "homeTeamGoals" : 2,
+  "roundId" : "13",
+  "events" : [ {
+    "description" : "yellow card to Raz Meir",
+    "id" : "10",
+    "type" : "goal",
+    "minute" : 33
+  }, {
+    "description" : "yellow card to Raz Meir",
+    "id" : "10",
+    "type" : "goal",
+    "minute" : 33
+  } ],
+  "status" : "done"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/yaml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#Match">Match</a>
+    <h4 class="field-label">404</h4>
+    matches not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="getTeamById"></a>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
